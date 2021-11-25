@@ -9,7 +9,7 @@ use PHPUnit_Framework_TestCase;
  * More advanced usage of collection pipeline, see
  * http://martinfowler.com/articles/refactoring-pipelines.html#GroupingFlightRecords for reference.
  */
-class GroupingFlightsTest extends PHPUnit_Framework_TestCase
+class GroupingFlightsTest extends \PHPUnit\Framework\TestCase
 {
     private $inputData = [
         [

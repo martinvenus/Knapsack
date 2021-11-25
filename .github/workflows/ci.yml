@@ -1,0 +1,26 @@
+name: Package CI
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  checks:
+    name: Checks
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [ 7.3, 7.4, 8.0, 8.1 ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+
+      - run: composer update --no-interaction --no-suggest --no-progress --prefer-dist
+
+      - run: make lint
+
+      - run: make phpstan
+
+      - run: make run-tests

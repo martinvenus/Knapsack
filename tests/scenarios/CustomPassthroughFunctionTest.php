@@ -5,7 +5,7 @@ namespace DusanKasan\Knapsack\Tests\Scenarios;
 use DusanKasan\Knapsack\Collection;
 use PHPUnit_Framework_TestCase;
 
-class CustomPassthroughFunctionTest extends PHPUnit_Framework_TestCase
+class CustomPassthroughFunctionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Example of implementing a transpose function and how to apply it over a collection.

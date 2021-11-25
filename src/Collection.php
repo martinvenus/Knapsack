@@ -18,7 +18,7 @@ class Collection implements IteratorAggregate, \Serializable, CollectionInterfac
     protected $input;
 
     /**
-     * @var callable
+     * @var callable|null
      */
     private $inputFactory;
 
