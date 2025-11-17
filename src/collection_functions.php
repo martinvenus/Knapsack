@@ -356,7 +356,11 @@ function sort($collection, callable $function)
     uasort(
         $array,
         function ($a, $b) use ($function) {
-            return $function($a[1], $b[1], $a[0], $b[0]);
+            $result = $function($a[1], $b[1], $a[0], $b[0]);
+            if (is_bool($result)) {
+                return $result ? 1 : -1;
+            }
+            return $result;
         }
     );
 
